@@ -1,6 +1,6 @@
 # Barbell Planner
 
-Web app to calculate plates, given a barbell weight and a target weight.
+Web app to calculate weightlifting plates to load on a barbell, given a barbell weight and a target total weight.
 
 <img width="368" alt="image" src="https://github.com/timciep/barbell-planner/assets/2245341/5c956850-cb84-4b05-9925-a51625feb41c">
 
