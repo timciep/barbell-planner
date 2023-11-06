@@ -1,22 +1,15 @@
-# create-svelte
+# Barbell Planner
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Web app to calculate plates, given a barbell weight and a target weight.
 
-## Creating a project
+<img width="368" alt="image" src="https://github.com/timciep/barbell-planner/assets/2245341/5c956850-cb84-4b05-9925-a51625feb41c">
 
-If you're seeing this, you've probably already done this step. Congrats!
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Built with Svelte & [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte) package.
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependencies with `npm install` (or `pnpm install` or `yarn`), then:
 
 ```bash
 npm run dev
@@ -34,5 +27,3 @@ npm run build
 ```
 
 You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
