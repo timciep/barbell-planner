@@ -4,8 +4,7 @@ Web app to calculate weightlifting plates to load on a barbell, given a barbell 
 
 [Live](https://barbell-planner.timcieplowski.com/)
 
-<img width="368" alt="image" src="https://github.com/timciep/barbell-planner/assets/2245341/5c956850-cb84-4b05-9925-a51625feb41c">
-
+<img width="383" alt="image" src="https://github.com/timciep/barbell-planner/assets/2245341/d16a78b5-fe89-4919-a8c2-2d2285a72cb4">
 
 Built with Svelte & [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte) package.
 
