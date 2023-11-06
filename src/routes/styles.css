@@ -10,6 +10,11 @@
 	--color-theme-1: #ff3e00;
 	--color-theme-2: #4075a6;
 	--color-theme-green: #005e00;
+	--color-theme-red: #8c0000;
+	--color-theme-yellow: #d9ae00;
+	--color-theme-warning-bg: #fff1bb;
+	--color-theme-danger-bg: #ffd7d7;
+	--color-theme-success-bg: #d6e8d6;
 	--color-text: rgba(0, 0, 0, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;

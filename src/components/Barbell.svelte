@@ -88,7 +88,7 @@
     </div>
 
     <div class="section">
-        <h3>Select barbell weight</h3>
+        <h3>Select bar weight</h3>
 
         <div class="barbell">
             <div class="barbell-weights">
@@ -124,16 +124,33 @@
     <div class="section">
         <h3>Enter target weight</h3>
 
-        <div>
-            <input type="number" min="0" step="1"
-                bind:value={targetWeight}
-            />
-            &nbsp;
-            lbs
+        <div class="target-section">
+            <div>
+                <input type="number" min="0" step="1"
+                    bind:value={targetWeight}
+                />
+                &nbsp;
+                lbs
+            </div>
+
+            <div>
+                <button
+                    on:click={() => {
+                        targetWeight = null;
+                    }}
+                >
+                    &times;
+                </button>
+            </div>
         </div>
     </div>
 
-    <div class="section results">
+    <div
+        class="section results"
+        class:overweight={plates.length > 0 && targetWeight && actualWeight > targetWeight }
+        class:underweight={plates.length > 0 && targetWeight && actualWeight < targetWeight}
+        class:equal={plates.length > 0 && targetWeight && actualWeight === targetWeight}
+    >
         <h3>Results</h3>
 
         {#if selectedBarbellWeight !== null && targetWeight !== null}
@@ -146,7 +163,12 @@
                     <div class="total">
                         Actual weight:
                         <br>
-                        <span class="actual-weight">{actualWeight}</span> lbs
+                        <span 
+                            class="actual-weight"
+                        >
+                            {actualWeight}
+                        </span>
+                        lbs
                     </div>
 
                     <div class="round-up">
@@ -172,7 +194,7 @@
         {:else}
             {#if selectedBarbellWeight === null}
                 <div class="warning">
-                    Please select a barbell weight.
+                    Please select a bar weight.
                 </div>
             {:else}
                 <div class="warning">
@@ -197,7 +219,7 @@
     .warning {
         border: 1px solid rgba(255, 204, 0, 0.5);
         border-radius: 0.25rem;
-        background: #fff1bb;
+        background: var(--color-theme-warning-bg);
         padding: 0.5rem 1rem;
         width: fit-content;
         margin: 0 auto;
@@ -236,7 +258,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        height: 80px;
+        height: 75px;
         cursor: pointer;
     }
 
@@ -252,6 +274,8 @@
         border-radius: 0.25rem;
         border: 1px solid rgba(0, 0, 0, 0.1);
         padding: 0.5rem 0.1rem 0.5rem 1rem;
+        -moz-appearance: textfield;
+        appearance: textfield;
     }
 
     input[type=checkbox] {
@@ -261,6 +285,23 @@
         border-radius: 0.25rem;
         border: 1px solid rgba(0, 0, 0, 0.1);
         padding: 0;
+        cursor: pointer;
+    }
+
+    .target-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .target-section button {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0.25rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: transparent;
         cursor: pointer;
     }
 
@@ -291,8 +332,6 @@
         text-align: center;
         margin: 0.1rem;
         color: white;
-        -webkit-text-stroke: 2px black;
-        paint-order: stroke fill;
     }
 
     .plate-select {
@@ -328,18 +367,21 @@
         flex: 1.5 0 0;
         max-width: 20%;
         background-color: #A47148;
+        color: black;
     }
 
     .plate.weight-5 {
         flex: 1 0 0;
         max-width: 20%;
         background-color: #BC8A5F;
+        color: black;
     }
 
     .plate.weight-2\.5 {
         flex: 0.5 0 0;
         max-width: 15%;
         background-color: #D4A276;
+        color: black;
     }
 
     .total-section {
@@ -347,7 +389,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
+        gap: 3rem;
 
         /* background: rgba(0, 185, 3, 0.4);
         border: 1px solid rgba(0, 185, 3, 0.8);
@@ -363,13 +405,27 @@
         color: var(--color-theme-green);
     }
 
-    .section.results {
-        background-color: #d6e8d6;
+    .section.results.equal {
+        background-color: var(--color-theme-success-bg);
+    }
+
+    .section.results.overweight {
+        background-color: var(--color-theme-danger-bg);
+    }
+
+    .section.results.underweight {
+        background-color: var(--color-theme-warning-bg)
     }
 
     .help {
         font-size: 0.8rem;
         color: rgba(0, 0, 0, 0.5);
-        margin: 0.5rem 0;
+        margin: 1rem 0;
+    }
+
+    /* hide arrows */
+    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
     }
 </style>

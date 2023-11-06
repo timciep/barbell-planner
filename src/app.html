@@ -5,6 +5,29 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-6185MTKQNH"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-6185MTKQNH');
+		</script>
+		<!-- end Google tag (gtag.js) -->
+
+		<!-- Start AllRoads Snippet -->
+		<script>
+			! function(e, t, n, a, p, r, s) {
+			e[a] || ((p = e[a] = function() {
+			p.process ? p.process.apply(p, arguments) : p.queue.push(arguments)
+			}).queue = [], p.t = + new Date, (r = t.createElement(n)).async = 1, r.src = "https://cdn.allroadsanalytics.com/allroads.min.js", (s = t.getElementsByTagName(n)[0]).parentNode.insertBefore(r, s))
+			}(window, document, "script", "allroads"),
+			allroads("init", "ID-timcom", {follow: true}),
+			allroads("event", "pageload");
+		</script>
+		<!-- End AllRoads Snippet -->
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
